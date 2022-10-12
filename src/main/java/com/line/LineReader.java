@@ -27,7 +27,7 @@ public class LineReader<T> { // 파일 읽어와서 List<String>으로 만들기
         BufferedReader br = new BufferedReader(new FileReader(filename));
         String str;
         if(isRemoveColumnName){
-            br.readLine();
+            br.readLine(); // 첫줄 건너뜀
         }
         while ((str = br.readLine()) != null){
             result.add(parser.parse(str));

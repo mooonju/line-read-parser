@@ -8,6 +8,7 @@ public class Hospital {
         this.id = id;
     }
 
+    // getter 생성
     public String getId() {
         return id;
     }

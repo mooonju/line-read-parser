@@ -5,3 +5,4 @@ public interface Parser<T> {
     // 읽어올 파일에 따라 타입이 변함
     // 다형성을 적용하기 위해서 T 리턴
 }
+
