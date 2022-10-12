@@ -2,7 +2,6 @@ package com.line;
 
 import com.line.domain.Hospital;
 import com.line.parser.HospitalParser;
-
 import java.io.IOException;
 import java.util.List;
 

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LineReader<T> {
+public class LineReader<T> { // 파일 읽어와서 List<String>으로 만들기
     Parser<T> parser;
     boolean isRemoveColumnName = true;
 
