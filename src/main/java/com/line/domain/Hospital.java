@@ -5,7 +5,7 @@ public class Hospital {
     private String address;
     private String district;
     private String category;
-    private String emergencyRoom;
+    private int emergencyRoom;
     private String name;
     private String subdivision;
 
@@ -15,10 +15,22 @@ public class Hospital {
         // constructor에서 id를 set할 때 "를 빈칸으로
 //    }
 
-    public Hospital(String id, String address) {
+
+    // district는 address에서 잘라낼것이기 때문에 생성자 추가 X
+
+
+    public Hospital(String id, String address, String category, Integer emergencyRoom, String name, String subdivision) {
         this.id = id;
         this.address = address;
+        String[] splitted = this.address.split(" ");
+        this.district = String.format("%s %s", splitted[0], splitted[1]);
+        this.category = category;
+        this.emergencyRoom = emergencyRoom;
+        this.name = name;
+        this.subdivision = subdivision;
     }
+
+
 
     // getter 생성
     public String getId() {
@@ -37,7 +49,7 @@ public class Hospital {
         return category;
     }
 
-    public String getEmergencyRoom() {
+    public int getEmergencyRoom() {
         return emergencyRoom;
     }
 
