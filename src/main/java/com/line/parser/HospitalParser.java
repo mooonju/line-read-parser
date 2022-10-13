@@ -4,6 +4,16 @@ import com.line.domain.Hospital;
 
 public class HospitalParser implements Parser<Hospital>{
 
+    private String getSubdivision(String name) {
+        String[] subdivisions = { "소아과", "피부과", "성형외과", "정형외과", "안과", "가정의학과", "산부인과", "관절", "안과", "비뇨기과", "치과", "내과", "외과"};
+        for(String subdivision : subdivisions){
+            if(name.contains(subdivision)){
+                return subdivision;
+            }
+        }
+        return "";
+    }
+
 //    private String replaceAllQuot(String str) {
 //        return  str.replaceAll("\"", "");
 //    } 이 메소드 없애고 밑에 추가해서 라인을 받을 때에 " 없애는 코드 추가
@@ -22,8 +32,9 @@ public class HospitalParser implements Parser<Hospital>{
         // subdivision 5
 
         // subdivision은 파싱해서 추가
-
-        return new Hospital(splitted[0], splitted[1],splitted[2],Integer.parseInt(splitted[6]),splitted[10],splitted[5]);
+        String name = splitted[10];
+        String subdivision = getSubdivision(name);
+        return new Hospital(splitted[0], splitted[1],splitted[2],Integer.parseInt(splitted[6]),name, subdivision);
 
     }
 }
