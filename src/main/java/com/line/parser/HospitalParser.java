@@ -12,7 +12,18 @@ public class HospitalParser implements Parser<Hospital>{
         str = str.replaceAll("\"", "");
         String[] splitted = str.split(",");
         // csv는 쉼표로 구분되어 있는 데이터이기 때문에 쉼표를 기준으로 데이터 자르기
-        return new Hospital(splitted[0], splitted[1],splitted[2],Integer.parseInt(splitted[6]),splitted[4],splitted[5]);
+
+        // id 0
+        // address 1
+        // district
+        // category 2
+        // emergencyRoom 6
+        // name 10
+        // subdivision 5
+
+        // subdivision은 파싱해서 추가
+
+        return new Hospital(splitted[0], splitted[1],splitted[2],Integer.parseInt(splitted[6]),splitted[10],splitted[5]);
 
     }
 }
