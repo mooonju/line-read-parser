@@ -30,6 +30,17 @@ public class Hospital {
         this.subdivision = subdivision;
     }
 
+    // sql 쿼리 추가
+    public String getSqlInsertQuery(){
+        String sql = String.format("INSERT INTO `likelion-db`.`seoul_hospital`\n" +
+                "(`id`,`address`,`district`,`category`,`emergency_room`,`name`,`subdivision`)\n" +
+                "VALUES" +
+                "(\"%s\",\n" +
+                "\"%s\",\n" +
+                "\"%s\",\"%s\",%d,\"%s\",\"%s\");", this.id, this.address, this.district, this.category, this.emergencyRoom, this.name, this.subdivision);
+        return sql;
+    }
+
 
 
     // getter 생성
